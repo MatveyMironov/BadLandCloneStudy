@@ -7,9 +7,21 @@ namespace InputSystem
     {
         [SerializeField] private PlayerMovement playerMovement;
 
-        public void InvokeUpwardFlight()
+        public void InvokeAscend()
         {
+            playerMovement.Ascend();
+        }
 
+        public void InvokeDescend(bool shouldDescend)
+        {
+            if (shouldDescend)
+            {
+                playerMovement.StartDescend();
+            }
+            else
+            {
+                playerMovement.StopDescend();
+            }
         }
 
         public void InvokeSidewayFlight(float direction)
