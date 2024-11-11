@@ -607,6 +607,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 294453379}
+--- !u!1001 &5309904088509475033
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1377602005906808227, guid: 5a77cb0aee1f2f44aa26233ee714d2e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377602005906808227, guid: 5a77cb0aee1f2f44aa26233ee714d2e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377602005906808227, guid: 5a77cb0aee1f2f44aa26233ee714d2e2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.099245295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377602005906808227, guid: 5a77cb0aee1f2f44aa26233ee714d2e2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377602005906808227, guid: 5a77cb0aee1f2f44aa26233ee714d2e2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377602005906808227, guid: 5a77cb0aee1f2f44aa26233ee714d2e2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377602005906808227, guid: 5a77cb0aee1f2f44aa26233ee714d2e2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377602005906808227, guid: 5a77cb0aee1f2f44aa26233ee714d2e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377602005906808227, guid: 5a77cb0aee1f2f44aa26233ee714d2e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377602005906808227, guid: 5a77cb0aee1f2f44aa26233ee714d2e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422220636677119559, guid: 5a77cb0aee1f2f44aa26233ee714d2e2, type: 3}
+      propertyPath: m_Name
+      value: Circylar Saw
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5a77cb0aee1f2f44aa26233ee714d2e2, type: 3}
 --- !u!1001 &7824723727956290898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -732,3 +789,4 @@ SceneRoots:
   - {fileID: 753624327}
   - {fileID: 4747103}
   - {fileID: 8252227840434701938}
+  - {fileID: 5309904088509475033}
