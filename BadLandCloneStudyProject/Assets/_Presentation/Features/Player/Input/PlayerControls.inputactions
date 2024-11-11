@@ -6,7 +6,7 @@
             "id": "98e3b4f4-3a04-45ca-b3cb-2a5c84f1dc2c",
             "actions": [
                 {
-                    "name": "FlyUp",
+                    "name": "Ascend",
                     "type": "Button",
                     "id": "1653ae71-a746-4b2a-a3a2-43ceadaf29a2",
                     "expectedControlType": "Button",
@@ -24,7 +24,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Deccend",
+                    "name": "Descend",
                     "type": "Button",
                     "id": "3ee1725c-2205-440f-a541-8d06578973fb",
                     "expectedControlType": "Button",
@@ -41,7 +41,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "FlyUp",
+                    "action": "Ascend",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -85,7 +85,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Deccend",
+                    "action": "Descend",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

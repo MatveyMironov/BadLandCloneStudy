@@ -28,7 +28,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""id"": ""98e3b4f4-3a04-45ca-b3cb-2a5c84f1dc2c"",
             ""actions"": [
                 {
-                    ""name"": ""FlyUp"",
+                    ""name"": ""Ascend"",
                     ""type"": ""Button"",
                     ""id"": ""1653ae71-a746-4b2a-a3a2-43ceadaf29a2"",
                     ""expectedControlType"": ""Button"",
@@ -46,7 +46,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Deccend"",
+                    ""name"": ""Descend"",
                     ""type"": ""Button"",
                     ""id"": ""3ee1725c-2205-440f-a541-8d06578973fb"",
                     ""expectedControlType"": ""Button"",
@@ -63,7 +63,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""FlyUp"",
+                    ""action"": ""Ascend"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -107,7 +107,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Deccend"",
+                    ""action"": ""Descend"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -118,9 +118,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
 }");
         // MainActionMap
         m_MainActionMap = asset.FindActionMap("MainActionMap", throwIfNotFound: true);
-        m_MainActionMap_FlyUp = m_MainActionMap.FindAction("FlyUp", throwIfNotFound: true);
+        m_MainActionMap_Ascend = m_MainActionMap.FindAction("Ascend", throwIfNotFound: true);
         m_MainActionMap_FlySideways = m_MainActionMap.FindAction("FlySideways", throwIfNotFound: true);
-        m_MainActionMap_Deccend = m_MainActionMap.FindAction("Deccend", throwIfNotFound: true);
+        m_MainActionMap_Descend = m_MainActionMap.FindAction("Descend", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -182,16 +182,16 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     // MainActionMap
     private readonly InputActionMap m_MainActionMap;
     private List<IMainActionMapActions> m_MainActionMapActionsCallbackInterfaces = new List<IMainActionMapActions>();
-    private readonly InputAction m_MainActionMap_FlyUp;
+    private readonly InputAction m_MainActionMap_Ascend;
     private readonly InputAction m_MainActionMap_FlySideways;
-    private readonly InputAction m_MainActionMap_Deccend;
+    private readonly InputAction m_MainActionMap_Descend;
     public struct MainActionMapActions
     {
         private @PlayerControls m_Wrapper;
         public MainActionMapActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction Ascend => m_Wrapper.m_MainActionMap_FlyUp;
+        public InputAction @Ascend => m_Wrapper.m_MainActionMap_Ascend;
         public InputAction @FlySideways => m_Wrapper.m_MainActionMap_FlySideways;
-        public InputAction Descend => m_Wrapper.m_MainActionMap_Deccend;
+        public InputAction @Descend => m_Wrapper.m_MainActionMap_Descend;
         public InputActionMap Get() { return m_Wrapper.m_MainActionMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -201,28 +201,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_MainActionMapActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_MainActionMapActionsCallbackInterfaces.Add(instance);
-            Ascend.started += instance.OnFlyUp;
-            Ascend.performed += instance.OnFlyUp;
-            Ascend.canceled += instance.OnFlyUp;
+            @Ascend.started += instance.OnAscend;
+            @Ascend.performed += instance.OnAscend;
+            @Ascend.canceled += instance.OnAscend;
             @FlySideways.started += instance.OnFlySideways;
             @FlySideways.performed += instance.OnFlySideways;
             @FlySideways.canceled += instance.OnFlySideways;
-            Descend.started += instance.OnDeccend;
-            Descend.performed += instance.OnDeccend;
-            Descend.canceled += instance.OnDeccend;
+            @Descend.started += instance.OnDescend;
+            @Descend.performed += instance.OnDescend;
+            @Descend.canceled += instance.OnDescend;
         }
 
         private void UnregisterCallbacks(IMainActionMapActions instance)
         {
-            Ascend.started -= instance.OnFlyUp;
-            Ascend.performed -= instance.OnFlyUp;
-            Ascend.canceled -= instance.OnFlyUp;
+            @Ascend.started -= instance.OnAscend;
+            @Ascend.performed -= instance.OnAscend;
+            @Ascend.canceled -= instance.OnAscend;
             @FlySideways.started -= instance.OnFlySideways;
             @FlySideways.performed -= instance.OnFlySideways;
             @FlySideways.canceled -= instance.OnFlySideways;
-            Descend.started -= instance.OnDeccend;
-            Descend.performed -= instance.OnDeccend;
-            Descend.canceled -= instance.OnDeccend;
+            @Descend.started -= instance.OnDescend;
+            @Descend.performed -= instance.OnDescend;
+            @Descend.canceled -= instance.OnDescend;
         }
 
         public void RemoveCallbacks(IMainActionMapActions instance)
@@ -242,8 +242,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public MainActionMapActions @MainActionMap => new MainActionMapActions(this);
     public interface IMainActionMapActions
     {
-        void OnFlyUp(InputAction.CallbackContext context);
+        void OnAscend(InputAction.CallbackContext context);
         void OnFlySideways(InputAction.CallbackContext context);
-        void OnDeccend(InputAction.CallbackContext context);
+        void OnDescend(InputAction.CallbackContext context);
     }
 }
