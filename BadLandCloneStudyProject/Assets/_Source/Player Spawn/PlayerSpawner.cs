@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PlayerSpawn
+namespace Gameplay
 {
     public class PlayerSpawner : MonoBehaviour
     {

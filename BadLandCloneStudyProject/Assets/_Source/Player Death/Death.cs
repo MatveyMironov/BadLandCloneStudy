@@ -9,7 +9,7 @@ namespace Player
 
         public void InvokeDeath()
         {
-            Debug.Log("Death");
+            gameObject.SetActive(false);
             OnDeath?.Invoke();
         }
     }
