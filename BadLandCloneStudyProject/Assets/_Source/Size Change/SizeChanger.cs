@@ -20,6 +20,18 @@ namespace Size
             _rigidBody = GetComponent<Rigidbody2D>();
             _axisRatio = _rigidBody.transform.localScale;
 
+            if (sizes.Length <= 0)
+            {
+                sizes = new Size[1];
+                sizes[0] = new Size(1, _rigidBody.mass);
+            }
+
+            SetDefaultSize();
+        }
+
+        [ContextMenu("Set Default Size")]
+        public void SetDefaultSize()
+        {
             if (defaultSizeIndex >= sizes.Length || defaultSizeIndex < 0)
             {
                 _currentSizeIndex = 0;
@@ -29,19 +41,7 @@ namespace Size
                 _currentSizeIndex = defaultSizeIndex;
             }
 
-            if (sizes.Length <= 0)
-            {
-                sizes = new Size[1];
-                sizes[0] = new Size(1, _rigidBody.mass);
-            }
-
             ChangeSize(sizes[_currentSizeIndex]);
-        }
-
-        private void ChangeSize(Size sizeBlueprint)
-        {
-            _rigidBody.mass = sizeBlueprint.Mass;
-            _rigidBody.transform.localScale = _axisRatio * sizeBlueprint.Scale;
         }
 
         [ContextMenu("Encrease Size")]
@@ -66,6 +66,12 @@ namespace Size
             _currentSizeIndex--;
             ChangeSize(sizes[_currentSizeIndex]);
             successful = true;
+        }
+
+        private void ChangeSize(Size sizeBlueprint)
+        {
+            _rigidBody.mass = sizeBlueprint.Mass;
+            _rigidBody.transform.localScale = _axisRatio * sizeBlueprint.Scale;
         }
 
         [Serializable]
