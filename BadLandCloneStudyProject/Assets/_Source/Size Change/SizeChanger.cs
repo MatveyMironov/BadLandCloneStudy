@@ -1,7 +1,8 @@
 using System;
+using TMPro;
 using UnityEngine;
 
-namespace Player
+namespace Size
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class SizeChanger : MonoBehaviour
@@ -44,21 +45,27 @@ namespace Player
         }
 
         [ContextMenu("Encrease Size")]
-        public void EncreaseSize()
+        public void EncreaseSize(out bool successful)
         {
-            if (_currentSizeIndex >= sizes.Length) { return; }
+            successful = false;
+
+            if (_currentSizeIndex >= sizes.Length - 1) { return; }
 
             _currentSizeIndex++;
             ChangeSize(sizes[_currentSizeIndex]);
+            successful = true;
         }
 
         [ContextMenu("Decrease Size")]
-        public void DecreaseSize()
+        public void DecreaseSize(out bool successful)
         {
+            successful = false;
+
             if (_currentSizeIndex <= 0) { return; }
 
             _currentSizeIndex--;
             ChangeSize(sizes[_currentSizeIndex]);
+            successful = true;
         }
 
         [Serializable]
