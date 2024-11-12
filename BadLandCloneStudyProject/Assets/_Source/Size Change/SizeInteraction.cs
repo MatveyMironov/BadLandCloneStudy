@@ -25,7 +25,7 @@ namespace Size
 
                     if (successful)
                     {
-                        Destroy(gameObject);
+                        gameObject.SetActive(false);
                     }
                 }
             }

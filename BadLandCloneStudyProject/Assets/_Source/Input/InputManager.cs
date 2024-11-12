@@ -28,15 +28,15 @@ namespace InputSystem
         {
             if (direction < 0)
             {
-                playerMovement.FlyLeft();
+                playerMovement.StartLeftFlight();
             }
             else if (direction > 0)
             {
-                playerMovement.FlyRight();
+                playerMovement.StartRightFlight();
             }
             else
             {
-                playerMovement.StopSidewayFlight();
+                playerMovement.StopHorizontalFlight();
             }
         }
     }
