@@ -1,4 +1,5 @@
 using InputSystem;
+using LevelSystem;
 
 namespace Gameplay
 {
@@ -7,22 +8,25 @@ namespace Gameplay
         private StartMenu _startMenu;
         private InputManager _inputManager;
         private PlayerSpawner _playerSpawner;
+        private LevelSwitcher _levelSwitcher;
 
         private bool _gameStarted;
 
-        public GameStarter(StartMenu startMenu, InputManager inputManager, PlayerSpawner playerSpawner)
+        public GameStarter(StartMenu startMenu, InputManager inputManager, PlayerSpawner playerSpawner, LevelSwitcher levelSwitcher)
         {
             _startMenu = startMenu;
             _inputManager = inputManager;
             _playerSpawner = playerSpawner;
+            _levelSwitcher = levelSwitcher;
 
             Initialize();
         }
 
         private void Initialize()
         {
-            _startMenu.OnStartButtonClicked += StartGame;
+            _levelSwitcher.CreateNextLevel();
 
+            _startMenu.OnStartButtonClicked += StartGame;
             _startMenu.OpenMenu();
 
             _inputManager.InputEnabled = false;
