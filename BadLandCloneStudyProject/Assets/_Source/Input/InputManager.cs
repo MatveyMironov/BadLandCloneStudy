@@ -1,26 +1,32 @@
 using Player;
-using UnityEngine;
 
 namespace InputSystem
 {
-    public class InputManager : MonoBehaviour
+    public class InputManager
     {
-        [SerializeField] private PlayerMovement playerMovement;
+        private PlayerMovement _playerMovement;
+
+        public InputManager(PlayerMovement playerMovement)
+        {
+            _playerMovement = playerMovement;
+        }
+
+        public bool InputEnabled { get; set; }
 
         public void InvokeAscend()
         {
-            playerMovement.Ascend();
+            _playerMovement.Ascend();
         }
 
         public void InvokeDescend(bool shouldDescend)
         {
             if (shouldDescend)
             {
-                playerMovement.StartDescend();
+                _playerMovement.StartDescend();
             }
             else
             {
-                playerMovement.StopDescend();
+                _playerMovement.StopDescend();
             }
         }
 
@@ -28,15 +34,15 @@ namespace InputSystem
         {
             if (direction < 0)
             {
-                playerMovement.StartLeftFlight();
+                _playerMovement.StartLeftFlight();
             }
             else if (direction > 0)
             {
-                playerMovement.StartRightFlight();
+                _playerMovement.StartRightFlight();
             }
             else
             {
-                playerMovement.StopHorizontalFlight();
+                _playerMovement.StopHorizontalFlight();
             }
         }
     }

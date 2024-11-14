@@ -3,13 +3,17 @@ using UnityEngine;
 
 namespace Gameplay
 {
-    public class PlayerSpawner : MonoBehaviour
+    public class PlayerSpawner
     {
-        [SerializeField] private PlayerReferences _player;
+        private PlayerReferences _player;
+        private Transform _spawnPoint;
 
-        [SerializeField] private Transform _spawnPoint;
+        public PlayerSpawner(PlayerReferences player, Transform spawnPoint)
+        {
+            _player = player;
+            _spawnPoint = spawnPoint;
+        }
 
-        [ContextMenu("Spawn Player")]
         public void SpawnPlayer()
         {
             _player.SizeChanger.SetDefaultSize();

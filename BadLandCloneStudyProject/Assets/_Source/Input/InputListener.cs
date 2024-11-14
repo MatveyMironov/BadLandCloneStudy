@@ -3,13 +3,20 @@ using UnityEngine.InputSystem;
 
 namespace InputSystem
 {
-    public class InputListener : MonoBehaviour
+    public class InputListener
     {
-        [SerializeField] private InputManager inputManager;
+        private InputManager _inputManager;
+
+        public InputListener(InputManager inputManager)
+        {
+            _inputManager = inputManager;
+
+            Initialize();
+        }
 
         private PlayerControls _playerControls;
 
-        private void Awake()
+        private void Initialize()
         {
             _playerControls = new();
 
@@ -21,34 +28,26 @@ namespace InputSystem
             _playerControls.MainActionMap.FlySideways.started += OnSidewaysInput;
             _playerControls.MainActionMap.FlySideways.performed += OnSidewaysInput;
             _playerControls.MainActionMap.FlySideways.canceled += OnSidewaysInput;
-        }
 
-        private void OnEnable()
-        {
             _playerControls.MainActionMap.Enable();
-        }
-
-        private void OnDisable()
-        {
-            _playerControls.MainActionMap.Disable();
         }
 
         private void OnAscendInput(InputAction.CallbackContext callbackContext)
         {
-            inputManager.InvokeAscend();
+            _inputManager.InvokeAscend();
         }
 
         private void OnDescendInput(InputAction.CallbackContext context)
         {
             bool shouldDescend = context.ReadValueAsButton();
 
-            inputManager.InvokeDescend(shouldDescend);
+            _inputManager.InvokeDescend(shouldDescend);
         }
 
         private void OnSidewaysInput(InputAction.CallbackContext callbackContext)
         {
             float direction = callbackContext.ReadValue<float>();
-            inputManager.InvokeSidewayFlight(direction);
+            _inputManager.InvokeSidewayFlight(direction);
         }
     }
 }
