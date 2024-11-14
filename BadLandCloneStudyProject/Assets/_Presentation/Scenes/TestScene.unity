@@ -157,7 +157,7 @@ MonoBehaviour:
   _playerSpawnPoint: {fileID: 620275090}
   _player: {fileID: 1533086953}
   levelRoute: {fileID: 1901879909}
-  levelList: {fileID: 11400000, guid: 707668db76b5b7147b011561498b699f, type: 2}
+  levelConstructionConfiguration: {fileID: 11400000, guid: a4d0897754aa681439b412dabcd5475c, type: 2}
   levelFinisher: {fileID: 1313256793}
 --- !u!4 &4747103
 Transform:
@@ -1335,6 +1335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1622313368548901360, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1908437495070196458, guid: 883279d055145a74ba814f5864dca905, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1374,6 +1378,14 @@ PrefabInstance:
     - target: {fileID: 1908437495070196458, guid: 883279d055145a74ba814f5864dca905, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562321760669782644, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: descendForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562321760669782644, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: horizontalForce
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

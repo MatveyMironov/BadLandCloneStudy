@@ -1,3 +1,4 @@
+using PlayerSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,16 +6,18 @@ namespace InputSystem
 {
     public class InputListener
     {
-        private InputManager _inputManager;
+        private MovementController _inputManager;
 
-        public InputListener(InputManager inputManager)
+        private PlayerControls _playerControls;
+
+        public InputListener(MovementController inputManager)
         {
             _inputManager = inputManager;
 
             Initialize();
         }
 
-        private PlayerControls _playerControls;
+        public bool MainActionMapEnabled { get => _playerControls.MainActionMap.enabled; }
 
         private void Initialize()
         {
@@ -28,8 +31,17 @@ namespace InputSystem
             _playerControls.MainActionMap.FlySideways.started += OnSidewaysInput;
             _playerControls.MainActionMap.FlySideways.performed += OnSidewaysInput;
             _playerControls.MainActionMap.FlySideways.canceled += OnSidewaysInput;
+        }
 
+        public void EnableMainActionMap()
+        {
             _playerControls.MainActionMap.Enable();
+        }
+
+        public void DisableMainActionMap()
+        {
+
+            _playerControls.MainActionMap.Disable();
         }
 
         private void OnAscendInput(InputAction.CallbackContext callbackContext)
