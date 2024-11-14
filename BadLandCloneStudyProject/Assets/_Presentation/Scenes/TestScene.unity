@@ -255,7 +255,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2562321760669782644, guid: 883279d055145a74ba814f5864dca905, type: 3}
   m_PrefabInstance: {fileID: 7824723727956290898}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1801717867}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f9726635c0e9f346a1590d93659599a, type: 3}
@@ -1090,7 +1090,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8436437097750315728, guid: 883279d055145a74ba814f5864dca905, type: 3}
   m_PrefabInstance: {fileID: 7824723727956290898}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1801717867}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20c2a9b232a55c04ea7dcaa9ba00d7db, type: 3}
@@ -1230,6 +1230,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770511211}
   m_CullTransparentMesh: 1
+--- !u!1 &1801717867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1622313368548901360, guid: 883279d055145a74ba814f5864dca905, type: 3}
+  m_PrefabInstance: {fileID: 7824723727956290898}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1801717873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801717867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1cb89149065d0a4ea3297b03a2f048c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactLayers:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &1859355001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,9 +1351,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 721618607827560045, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1622313368548901360, guid: 883279d055145a74ba814f5864dca905, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622313368548901360, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1622313368548901360, guid: 883279d055145a74ba814f5864dca905, type: 3}
       propertyPath: m_IsActive
@@ -1387,10 +1415,37 @@ PrefabInstance:
       propertyPath: horizontalForce
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3829371665934861731, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003496631216118267, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370439675161652033, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815459752586988612, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815459752586988612, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815459752586988612, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1622313368548901360, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1801717873}
   m_SourcePrefab: {fileID: 100100000, guid: 883279d055145a74ba814f5864dca905, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
