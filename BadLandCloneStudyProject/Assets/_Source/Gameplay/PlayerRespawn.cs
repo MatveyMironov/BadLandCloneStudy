@@ -1,18 +1,18 @@
-using Player;
+using PlayerSystem;
 
 namespace Gameplay
 {
     public class PlayerRespawn
     {
-        private Death _playerDeath;
+        private Player _player;
         private PlayerSpawner _spawner;
 
-        public PlayerRespawn(Death playerDeath, PlayerSpawner spawner)
+        public PlayerRespawn(Player player, PlayerSpawner spawner)
         {
-            _playerDeath = playerDeath;
+            _player = player;
             _spawner = spawner;
 
-            _playerDeath.OnDeath += RespawnPlayer;
+            _player.OnDeath += RespawnPlayer;
         }
 
         private void RespawnPlayer()

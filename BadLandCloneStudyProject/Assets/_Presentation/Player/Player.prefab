@@ -96,7 +96,8 @@ GameObject:
   - component: {fileID: 6102852458261907964}
   - component: {fileID: 2323770436692251869}
   - component: {fileID: 2562321760669782644}
-  - component: {fileID: 1557386811194258207}
+  - component: {fileID: 8436437097750315728}
+  - component: {fileID: 8133314101092666548}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -168,9 +169,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -194,15 +195,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9726635c0e9f346a1590d93659599a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ascendAcceleration: 3
-  maxAscendingSpeed: 6
-  ascendCooldown: 0.2
-  descendSpeed: 8
-  horizontalSpeed: 3
-  gravityAcceleration: 5
+  ascendForce: 10
+  maxAscendingSpeed: 10
+  ascendCooldown: 0.3
+  descendForce: 5
+  maxDescendingSpeed: 10
+  horizontalForce: 2
+  maxHorizontalSpeed: 5
   maxFallingSpeed: 5
   rotationSpeed: 180
---- !u!114 &1557386811194258207
+--- !u!114 &8436437097750315728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,9 +213,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1622313368548901360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 351da0b8596d5834cb421326395140f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 20c2a9b232a55c04ea7dcaa9ba00d7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sizeChanger: {fileID: 8133314101092666548}
+--- !u!114 &8133314101092666548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622313368548901360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7120d0302d0cf746a3c6187b07a1a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizes:
+  - <Scale>k__BackingField: 0.5
+    <Mass>k__BackingField: 0.5
+  - <Scale>k__BackingField: 1
+    <Mass>k__BackingField: 1
+  - <Scale>k__BackingField: 2
+    <Mass>k__BackingField: 2
+  defaultSizeIndex: 1
 --- !u!1 &3829371665934861731
 GameObject:
   m_ObjectHideFlags: 0

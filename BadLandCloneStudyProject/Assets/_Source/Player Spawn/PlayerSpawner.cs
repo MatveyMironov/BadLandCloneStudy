@@ -1,14 +1,14 @@
-using Player;
+using PlayerSystem;
 using UnityEngine;
 
 namespace Gameplay
 {
     public class PlayerSpawner
     {
-        private PlayerReferences _player;
+        private Player _player;
         private Transform _spawnPoint;
 
-        public PlayerSpawner(PlayerReferences player, Transform spawnPoint)
+        public PlayerSpawner(Player player, Transform spawnPoint)
         {
             _player = player;
             _spawnPoint = spawnPoint;

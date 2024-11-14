@@ -1,4 +1,4 @@
-using Player;
+using PlayerSystem;
 
 namespace InputSystem
 {

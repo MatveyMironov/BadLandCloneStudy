@@ -1,4 +1,4 @@
-using Player;
+using PlayerSystem;
 using UnityEngine;
 
 namespace Obstacles
@@ -9,9 +9,9 @@ namespace Obstacles
         {
             if (collision != null)
             {
-                if (collision.transform.TryGetComponent(out Death death))
+                if (collision.transform.TryGetComponent(out IKillable killable))
                 {
-                    death.InvokeDeath();
+                    killable.Kill();
                 }
             }
         }
