@@ -532,7 +532,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000d78044e6c56e1bd6
+  m_ApplyToSortingLayers: 00000000d78044e6c56e1bd689fb7a98
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1331,6 +1331,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 438812404511001583, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 438812404511001583, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1736770679
+      objectReference: {fileID: 0}
     - target: {fileID: 1622313368548901360, guid: 883279d055145a74ba814f5864dca905, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1386,6 +1394,34 @@ PrefabInstance:
     - target: {fileID: 2562321760669782644, guid: 883279d055145a74ba814f5864dca905, type: 3}
       propertyPath: horizontalForce
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915522497816785311, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915522497816785311, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1736770679
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815459752586988612, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815459752586988612, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815459752586988612, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815459752586988612, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815459752586988612, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1736770679
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
