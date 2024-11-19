@@ -1,5 +1,6 @@
 using Gameplay;
 using InputSystem;
+using LevelSystem;
 using PlayerSystem;
 using UnityEngine;
 
@@ -13,21 +14,22 @@ namespace Core
         [SerializeField] private Transform _playerSpawnPoint;
         [SerializeField] private Player _player;
 
-        private InputListener _inputListener;
-        private InputManager _inputManager;
-        private PlayerSpawner _playerSpawner;
-        private PlayerRespawn _playerRespawn;
-        private GameStarter _gameStarter;
+        [Header("Levels")]
+        [SerializeField] private Transform levelRoute;
+        [SerializeField] private LevelConstructionConfigurationSO levelConstructionConfiguration;
+        [SerializeField] private LevelFinisher levelFinisher;
 
         private void Start()
         {
             _camera.Setup(_player.transform);
 
-            _inputManager = new(_playerMovement);
-            _inputListener = new(_inputManager);
-            _playerSpawner = new(_player, _playerSpawnPoint);
-            _gameStarter = new(_startMenu, _inputManager, _playerSpawner);
-            _playerRespawn = new(_player, _playerSpawner);
+            MovementController inputManager = new(_playerMovement);
+            InputListener inputListener = new(inputManager);
+            PlayerSpawner playerSpawner = new(_player, _playerSpawnPoint);
+            PlayerRespawn playerRespawn = new(_player, playerSpawner);
+            LevelSwitcher levelSwitcher = new(levelRoute, levelConstructionConfiguration, levelFinisher.transform);
+            LevelSwitchManager levelSwitchManager = new(levelFinisher, levelSwitcher, playerSpawner);
+            GameStarter gameStarter = new(_startMenu, inputListener, playerSpawner, levelSwitcher, _player);
         }
     }
 }

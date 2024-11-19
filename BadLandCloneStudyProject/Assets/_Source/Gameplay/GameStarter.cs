@@ -1,31 +1,45 @@
 using InputSystem;
+using LevelSystem;
+using PlayerSystem;
+using UnityEngine;
 
 namespace Gameplay
 {
     public class GameStarter
     {
         private StartMenu _startMenu;
-        private InputManager _inputManager;
+        private InputListener _inputListener;
         private PlayerSpawner _playerSpawner;
+        private LevelSwitcher _levelSwitcher;
+        private Player _player;
 
         private bool _gameStarted;
 
-        public GameStarter(StartMenu startMenu, InputManager inputManager, PlayerSpawner playerSpawner)
+        public GameStarter(StartMenu startMenu,
+                           InputListener inputListener,
+                           PlayerSpawner playerSpawner,
+                           LevelSwitcher levelSwitcher,
+                           Player player)
         {
             _startMenu = startMenu;
-            _inputManager = inputManager;
+            _inputListener = inputListener;
             _playerSpawner = playerSpawner;
+            _levelSwitcher = levelSwitcher;
+            _player = player;
 
             Initialize();
         }
 
         private void Initialize()
         {
-            _startMenu.OnStartButtonClicked += StartGame;
+            _player.gameObject.SetActive(false);
 
+            _levelSwitcher.CreateNextLevel();
+
+            _startMenu.OnStartButtonClicked += StartGame;
             _startMenu.OpenMenu();
 
-            _inputManager.InputEnabled = false;
+            _inputListener.DisableMainActionMap();
         }
 
         private void StartGame()
@@ -35,7 +49,7 @@ namespace Gameplay
 
             _startMenu.CloseMenu();
 
-            _inputManager.InputEnabled = true;
+            _inputListener.EnableMainActionMap();
 
             _playerSpawner.SpawnPlayer();
         }

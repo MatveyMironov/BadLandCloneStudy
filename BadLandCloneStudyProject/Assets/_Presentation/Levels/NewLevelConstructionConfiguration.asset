@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfdc47d74a5a58945aecfbcb54b289ce, type: 3}
+  m_Name: NewLevelConstructionConfiguration
+  m_EditorClassIdentifier: 
+  levelFragments:
+  - {fileID: 1758096054695407116, guid: 8a66a69cc52ea3b46bc1905b65af4e4f, type: 3}
+  - {fileID: 853265446224263833, guid: 6b9b215a5b76d8c4e84b7ae9c562d293, type: 3}
+  - {fileID: 3500054344714602609, guid: ad0ca9c8fce42af47b76377f8556f8e6, type: 3}
+  startFragment: {fileID: 4939677427574472858, guid: 9308ace6e1915e04c855b7e63cf20f90, type: 3}
+  finishFragment: {fileID: 3539206628079985200, guid: 7b5897d626ed5e54bae7a3001e633845, type: 3}
+  firstLevelSize: 3

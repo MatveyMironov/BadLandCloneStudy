@@ -1,17 +1,13 @@
-using PlayerSystem;
-
-namespace InputSystem
+namespace PlayerSystem
 {
-    public class InputManager
+    public class MovementController
     {
         private PlayerMovement _playerMovement;
 
-        public InputManager(PlayerMovement playerMovement)
+        public MovementController(PlayerMovement playerMovement)
         {
             _playerMovement = playerMovement;
         }
-
-        public bool InputEnabled { get; set; }
 
         public void InvokeAscend()
         {

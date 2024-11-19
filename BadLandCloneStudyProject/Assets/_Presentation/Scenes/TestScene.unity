@@ -156,6 +156,9 @@ MonoBehaviour:
   _startMenu: {fileID: 519491314}
   _playerSpawnPoint: {fileID: 620275090}
   _player: {fileID: 1533086953}
+  levelRoute: {fileID: 1901879909}
+  levelConstructionConfiguration: {fileID: 11400000, guid: a4d0897754aa681439b412dabcd5475c, type: 2}
+  levelFinisher: {fileID: 1313256793}
 --- !u!4 &4747103
 Transform:
   m_ObjectHideFlags: 0
@@ -971,6 +974,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232930871}
   m_CullTransparentMesh: 1
+--- !u!1 &1313256792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1313256795}
+  - component: {fileID: 1313256794}
+  - component: {fileID: 1313256793}
+  m_Layer: 0
+  m_Name: Level Finisher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1313256793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313256792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36da730685457b54fa7eb752a4da19c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &1313256794
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313256792}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!4 &1313256795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313256792}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1487999413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,58 +1292,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1966065536
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1966065538}
-  - component: {fileID: 1966065537}
-  m_Layer: 0
-  m_Name: Level Generator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1966065537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966065536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a1bc547dc17344e8b297189f65ef3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelFragmentPrefabs:
-  - {fileID: 1758096054695407116, guid: 8a66a69cc52ea3b46bc1905b65af4e4f, type: 3}
-  - {fileID: 853265446224263833, guid: 6b9b215a5b76d8c4e84b7ae9c562d293, type: 3}
-  - {fileID: 3500054344714602609, guid: ad0ca9c8fce42af47b76377f8556f8e6, type: 3}
-  levelStartPrefab: {fileID: 4939677427574472858, guid: 9308ace6e1915e04c855b7e63cf20f90, type: 3}
-  levelFinishPrefab: {fileID: 3539206628079985200, guid: 7b5897d626ed5e54bae7a3001e633845, type: 3}
-  levelRoute: {fileID: 1901879909}
-  levelSize: 5
---- !u!4 &1966065538
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966065536}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2057533686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,6 +1335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1622313368548901360, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1908437495070196458, guid: 883279d055145a74ba814f5864dca905, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1344,6 +1379,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2562321760669782644, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: descendForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562321760669782644, guid: 883279d055145a74ba814f5864dca905, type: 3}
+      propertyPath: horizontalForce
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1356,13 +1399,13 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 568325461}
   - {fileID: 4747103}
-  - {fileID: 1966065538}
   - {fileID: 1487999414}
   - {fileID: 1003426471}
   - {fileID: 306199429}
   - {fileID: 2057533687}
   - {fileID: 1901879909}
   - {fileID: 620275090}
+  - {fileID: 1313256795}
   - {fileID: 1859355002}
   - {fileID: 7824723727956290898}
   - {fileID: 519420032}
